@@ -17,7 +17,7 @@ INCLUDE_DIRECTORIES(
 LINK_DIRECTORIES(D:/projects/WebApp/app/src/main/jni/openssllib/${ANDROID_ABI}/)
 
 add_library( # Sets the name of the library.
-        native-lib
+        rsa
 
         # Sets the library as a shared library.
         SHARED
@@ -46,7 +46,9 @@ find_library( # Sets the name of the path variable.
 # build script, prebuilt third-party libraries, or system libraries.
 
 target_link_libraries( # Specifies the target library.
-        native-lib
+        rsa
         # Links the target library to the log library
         # included in the NDK.
         libcrypto.so libssl.so ${log-lib})
+
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/../jniLibs/${ANDROID_ABI})

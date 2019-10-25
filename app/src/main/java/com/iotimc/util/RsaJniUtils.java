@@ -5,7 +5,7 @@ import android.content.Context;
 public class RsaJniUtils {
 
     static {
-        System.loadLibrary("native-lib");
+        System.loadLibrary("rsa");
     }
 
     public native String encryptJNI(Context context,String encryptTextData);
